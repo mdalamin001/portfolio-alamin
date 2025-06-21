@@ -3,151 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Al Amin's Portfolio</title>
+  <title>Al Amin - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f5f5f5;
-      color: #333;
-      transition: 0.3s;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
-    .dark {
-      background: #1a1a1a;
-      color: white;
-    }
-    header {
-      background: #1e90ff;
-      color: white;
+
+    body {
+      background: linear-gradient(to right, #1c1c1c, #2c3e50);
+      color: #fff;
+      line-height: 1.6;
       padding: 40px 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1, h2 {
       text-align: center;
-      position: relative;
+      margin-bottom: 20px;
+      animation: slideDown 1s ease forwards;
     }
-    nav a {
-      margin: 0 15px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 800px;
+
+    .container {
+      max-width: 960px;
       margin: auto;
+      background-color: #222;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.5);
+      animation: zoomIn 1s ease-in-out;
     }
-    h2 {
-      color: #1e90ff;
+
+    .section {
+      margin-bottom: 40px;
     }
-    .dark h2 {
-      color: #90cfff;
+
+    .section h2 {
+      font-size: 28px;
+      color: #00d8ff;
     }
-    .project {
-      background: white;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 8px;
-      box-shadow: 0 0 5px #ccc;
+
+    .section p {
+      font-size: 18px;
+      margin-top: 10px;
     }
-    .dark .project {
-      background: #2b2b2b;
-      box-shadow: 0 0 5px #555;
+
+    a {
+      color: #00d8ff;
+      text-decoration: none;
     }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
-      padding: 20px;
-      background: #1e90ff;
-      color: white;
-    }
-    #darkToggle {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      background: white;
-      color: #1e90ff;
-      border: none;
-      padding: 6px 10px;
-      border-radius: 5px;
+      margin-top: 40px;
       font-size: 14px;
-      cursor: pointer;
+      color: #aaa;
     }
-    #scrollTopBtn {
-      display: none;
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #1e90ff;
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0 0 8px rgba(0,0,0,0.3);
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-    a.button {
-      display: inline-block;
-      background: #1e90ff;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      margin-top: 10px;
+
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>I am Al Amin</h1>
-    <p>Frontend Developer | JavaScript | React</p>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button id="darkToggle">🌙 Toggle Dark Mode</button>
-  </header>
+  <div class="container">
+    <h1>Hi, I'm Al Amin</h1>
+    <p style="text-align:center; margin-bottom: 30px; font-size: 20px;">Front-End Developer & Web Enthusiast</p>
 
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="project">
-      <h3>Project 1: Portfolio Website</h3>
-      <p>A responsive personal website built using HTML, CSS, and JavaScript.</p>
+    <div class="section">
+      <h2>About Me</h2>
+      <p>I am a passionate web developer focused on building responsive and user-friendly websites. I enjoy bringing ideas to life in the browser.</p>
     </div>
-    <div class="project">
-      <h3>Project 2: To-Do App</h3>
-      <p>A task management app built using vanilla JavaScript.</p>
+
+    <div class="section">
+      <h2>Skills</h2>
+      <p>HTML, CSS, JavaScript, GitHub, Responsive Design</p>
     </div>
-  </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a frontend developer skilled in HTML, CSS, JavaScript, and ReactJS. I love learning new technologies and solving real-world problems through code.</p>
-  </section>
+    <div class="section">
+      <h2>Projects</h2>
+      <p><strong>Portfolio Website:</strong> <a href="https://mdalamin001.github.io/portfolio-alamin/" target="_blank">Visit My Live Site</a></p>
+    </div>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>You can contact me by filling out the form below:</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSck1sLiYMlEb-BEXE0ySwGwLcep2XwhuGLN-IC9w1zu8AhI1w/viewform?usp=dialog" target="_blank" class="button">Open Contact Form</a>
-  </section>
+    <div class="section">
+      <h2>Contact Me</h2>
+      <p>If you want to get in touch, please fill out this form: <a href="https://docs.google.com/forms/d/e/1FAIpQLSck1sLiYMlEb-BEXE0ySwGwLcep2XwhuGLN-IC9w1zu8AhI1w/viewform?usp=sf_link" target="_blank">Google Form</a></p>
+    </div>
 
-  <footer>
-    <p>© 2025 Al Amin | All rights reserved</p>
-  </footer>
-
-  <button id="scrollTopBtn">↑</button>
-
-  <script>
-    document.getElementById("darkToggle").onclick = function () {
-      document.body.classList.toggle("dark");
-    };
-
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-    window.onscroll = function () {
-      scrollTopBtn.style.display = (document.documentElement.scrollTop > 200) ? "block" : "none";
-    };
-
-    scrollTopBtn.onclick = function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-  </script>
+    <footer>
+      &copy; 2025 Al Amin. All rights reserved.
+    </footer>
+  </div>
 </body>
 </html>
