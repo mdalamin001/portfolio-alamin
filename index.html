@@ -3,115 +3,208 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Al Amin - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>Al Amin's Portfolio</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
+    
     body {
-      background: linear-gradient(to right, #1c1c1c, #2c3e50);
-      color: #fff;
-      line-height: 1.6;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      transition: 0.3s;
+    }
+    .project:hover {
+    background: #e6f2ff; /* হালকা নীল রঙ */
+    transform: scale(1.03); /* একটু বড় করে দিবে */
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* হোভার করলে ছায়া */
+    cursor: pointer;
+}
+    .dark .project:hover {
+    background: #333c4d; /* ডার্ক মোডের জন্য হালকা নেভি রঙ */
+}
+
+
+    .dark {
+      background: #1a1a1a;
+      color: white;
+    }
+    header {
+      background: #1e90ff;
+      color: white;
       padding: 40px 20px;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    h1, h2 {
       text-align: center;
-      margin-bottom: 20px;
-      animation: slideDown 1s ease forwards;
+      position: relative;
     }
-
-    .container {
-      max-width: 960px;
-      margin: auto;
-      background-color: #222;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.5);
-      animation: zoomIn 1s ease-in-out;
-    }
-
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .section h2 {
-      font-size: 28px;
-      color: #00d8ff;
-    }
-
-    .section p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-    a {
-      color: #00d8ff;
+    nav a {
+      margin: 0 15px;
+      color: white;
       text-decoration: none;
+      font-weight: bold;
     }
-
-    a:hover {
-      text-decoration: underline;
+    section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
     }
-
+    h2 {
+      color: #1e90ff;
+    }
+    .dark h2 {
+      color: #90cfff;
+    }
+    .project {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 0 5px #ccc;
+    }
+    .dark .project {
+      background: #2b2b2b;
+      box-shadow: 0 0 5px #555;
+    }
     footer {
       text-align: center;
-      margin-top: 40px;
+      padding: 20px;
+      background: #1e90ff;
+      color: white;
+    }
+    #darkToggle {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      background: white;
+      color: #1e90ff;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 5px;
       font-size: 14px;
-      color: #aaa;
+      cursor: pointer;
+    }
+    #scrollTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #1e90ff;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    }
+    a.button {
+      display: inline-block;
+      background: #1e90ff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 10px;
+      cursor: pointer;
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .social-icons img {
+      width: 32px;
+      height: 32px;
+      margin: 0 10px;
+      transition: transform 0.3s;
+      vertical-align: middle;
+    }
+    .social-icons img:hover {
+      transform: scale(1.2);
     }
 
-    @keyframes slideDown {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    .form-container {
+      display: none;
+      margin-top: 20px;
     }
-
-    @keyframes zoomIn {
-      from { transform: scale(0.9); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Hi, I'm Al Amin</h1>
-    <p style="text-align:center; margin-bottom: 30px; font-size: 20px;">Front-End Developer & Web Enthusiast</p>
+  <header>
+    <h1>I am Al Amin</h1>
+    <p>Frontend Developer | JavaScript | React</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="darkToggle">🌙 Toggle Dark Mode</button>
+  </header>
 
-    <div class="section">
-      <h2>About Me</h2>
-      <p>I am a passionate web developer focused on building responsive and user-friendly websites. I enjoy bringing ideas to life in the browser.</p>
+    <section id="about">
+    <h2>About Me</h2>
+    <p>I am a frontend developer skilled in HTML, CSS, JavaScript, and ReactJS. I love learning new technologies and solving real-world problems through code.</p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="project">
+      <h3>Project 1: Portfolio Website</h3>
+      <p>A responsive personal website built using HTML, CSS, and JavaScript.</p>
     </div>
-
-    <div class="section">
-      <h2>Skills</h2>
-      <p>HTML, CSS, JavaScript, GitHub, Responsive Design</p>
+    <div class="project">
+      <h3>Project 2: To-Do App</h3>
+      <p>A task management app built using vanilla JavaScript.</p>
     </div>
+  </section>
 
-    <div class="section">
-      <h2>Projects</h2>
-      <p><strong>Portfolio Website:</strong> <a href="https://mdalamin001.github.io/portfolio-alamin/" target="_blank">Visit My Live Site</a></p>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>You can contact me by clicking the button below:</p>
+    <a class="button" onclick="showForm()">Open Contact Form</a>
+
+    <div class="form-container" id="formContainer">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSck1sLiYMlEb-BEXE0ySwGwLcep2XwhuGLN-IC9w1zu8AhI1w/viewform?embedded=true">Loading…</iframe>
     </div>
+  </section>
 
-    <div class="section">
-      <h2>Contact Me</h2>
-      <p>If you want to get in touch, please fill out this form: <a href="https://docs.google.com/forms/d/e/1FAIpQLSck1sLiYMlEb-BEXE0ySwGwLcep2XwhuGLN-IC9w1zu8AhI1w/viewform?usp=sf_link" target="_blank">Google Form</a></p>
+  <footer>
+    <p>© 2025 Al Amin | All rights reserved</p>
+    <div class="social-icons" style="margin-top: 10px;">
+      <a href="https://www.facebook.com/iamal.amin01" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      </a>
+      <a href="https://www.youtube.com/@Md.alamin01" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+      </a>
+      <a href="https://www.instagram.com/md.al_amin01/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      </a>
+      <a href="https://x.com/Md_Al_Amin01" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="Twitter">
+      </a>
     </div>
+  </footer>
 
-    <footer>
-      &copy; 2025 Al Amin. All rights reserved.
-    </footer>
-  </div>
+  <button id="scrollTopBtn">↑</button>
+
+  <script>
+    document.getElementById("darkToggle").onclick = function () {
+      document.body.classList.toggle("dark");
+    };
+
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function () {
+      scrollTopBtn.style.display = (document.documentElement.scrollTop > 200) ? "block" : "none";
+    };
+    scrollTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    function showForm() {
+      document.getElementById("formContainer").style.display = "block";
+    }
+  </script>
 </body>
 </html>
